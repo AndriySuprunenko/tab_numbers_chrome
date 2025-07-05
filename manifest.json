@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Numbers",
+  "version": "1.0.0",
+  "description": "Shows the number of each tab as a badge on the page.",
+  "permissions": ["tabs", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": {"service_worker": "background.js"},
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "options_page": "options.html",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}
