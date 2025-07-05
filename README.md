@@ -6,7 +6,7 @@
 - Додає номер вкладки поверх favicon (у самій вкладці, поряд із заголовком і favicon)
 - Враховує групи вкладок (нумерація як у Chrome)
 - Працює на всіх сторінках
-- Підтримка майбутніх налаштувань (колір, розмір, форма тощо)
+- Можна змінювати розмір цифри, колір тексту та фону через сторінку налаштувань
 
 ## Встановлення
 1. Скачайте або склонуйте цей репозиторій.
@@ -16,18 +16,22 @@
 
 ## Як це працює
 - Контент-скрипт отримує номер вкладки через background.js
-- Малює номер поверх favicon за допомогою canvas
+- Малює номер поверх favicon за допомогою canvas, використовуючи ваші налаштування
 - Підміняє favicon на сторінці
+
+## Налаштування
+Відкрийте сторінку налаштувань розширення (Options) і виберіть бажаний розмір цифри, колір тексту та фону. Зміни застосовуються автоматично для всіх вкладок.
 
 ## Файли
 - `manifest.json` — опис розширення
 - `background.js` — логіка визначення номера вкладки з урахуванням груп
-- `content.js` — малює номер на favicon
+- `content.js` — малює номер на favicon з урахуванням налаштувань
 - `styles.css` — не використовується для favicon, але може знадобитись для майбутніх UI
-- `options.html` — сторінка налаштувань (можна розширити)
+- `options.html` — сторінка налаштувань
+- `options.js` — логіка збереження/завантаження налаштувань
 
 ## TODO
-- Додати налаштування (колір, розмір, форма номера)
+- Додати вибір форми бейджа (круг, квадрат тощо)
 - Додати підтримку темної/світлої теми
 
 ---
@@ -44,7 +48,7 @@ Displays the tab number directly on the favicon in each Chrome tab, just like Ch
 - Adds the tab number on top of the favicon (in the tab, next to the title and favicon)
 - Takes tab groups into account (numbering matches Chrome's behavior)
 - Works on all pages
-- Future support for customization (color, size, shape, etc.)
+- You can change the number size, text color, and background color via the options page
 
 ## Installation
 1. Download or clone this repository.
@@ -54,18 +58,22 @@ Displays the tab number directly on the favicon in each Chrome tab, just like Ch
 
 ## How it works
 - The content script gets the tab number from background.js
-- Draws the number on top of the favicon using canvas
+- Draws the number on top of the favicon using canvas, applying your settings
 - Replaces the favicon on the page
+
+## Settings
+Open the extension's options page and choose the desired number size, text color, and background color. Changes are applied automatically to all tabs.
 
 ## Files
 - `manifest.json` — extension manifest
 - `background.js` — logic for determining tab number with group support
-- `content.js` — draws the number on the favicon
+- `content.js` — draws the number on the favicon using settings
 - `styles.css` — not used for favicon, but may be useful for future UI
-- `options.html` — options/settings page (can be extended)
+- `options.html` — options/settings page
+- `options.js` — logic for saving/loading settings
 
 ## TODO
-- Add customization (color, size, shape of the number)
+- Add badge shape selection (circle, square, etc.)
 - Add dark/light theme support
 
 ---
