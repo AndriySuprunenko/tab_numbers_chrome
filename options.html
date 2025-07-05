@@ -3,10 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Tab Numbers Options</title>
+  <style>
+    label { display: block; margin: 10px 0 4px; }
+    input[type="color"] { vertical-align: middle; }
+    input[type="number"] { width: 60px; }
+  </style>
 </head>
 <body>
   <h2>Tab Numbers Extension Settings</h2>
-  <p>Тут можна буде додати налаштування (наприклад, колір, розмір, форму тощо).</p>
-  <!-- TODO: Додати форму для налаштувань -->
+  <form id="settingsForm">
+    <label for="fontSize">Font size (px):</label>
+    <input type="number" id="fontSize" name="fontSize" min="8" max="32" value="14">
+
+    <label for="textColor">Text color:</label>
+    <input type="color" id="textColor" name="textColor" value="#ffffff">
+
+    <label for="bgColor">Background color:</label>
+    <input type="color" id="bgColor" name="bgColor" value="#444444">
+
+    <button type="submit">Save</button>
+    <span id="status" style="margin-left:10px;"></span>
+  </form>
+  <script src="options.js"></script>
 </body>
 </html>
